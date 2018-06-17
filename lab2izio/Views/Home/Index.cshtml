@@ -1,31 +1,251 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+    $(function()
+    {
+        $("#txt").keypress(function(e)
+         {
+            if (String.fromCharCode(e.keyCode).match(/[^0-9+-/*]/g)) return false;
+        });
+        $("#txt").height("40px").width("312px");
+        $("#b0").click(function() {
+            var x = document.getElementById("txt").value;
+            if (x == "0")
+            {
+                $("#txt").val("0");
+            } else
+            {
+                $("#txt").val(x + "0")
+            }
+        });
+        $("#b1").click(function()
+        {
+            var x = document.getElementById("txt").value;
+            if (x == "0")
+            {
+                $("#txt").val("1");
+            } else
+            {
+                $("#txt").val(x + "1")
+            }
+        });
+        $("#b2").click(function()
+        {
+            var x = document.getElementById("txt").value;
+            if (x == "0")
+            {
+                $("#txt").val("2");
+            } else
+            {
+                $("#txt").val(x + "2")
+            }
+        });
+        $("#b3").click(function()
+          {
+            var x = document.getElementById("txt").value;
+            if (x == "0")
+            {
+                $("#txt").val("3");
+            } else
+            {
+                $("#txt").val(x + "3")
+            }
+        });
+        $("#b4").click(function()
+         {
+            var x = document.getElementById("txt").value;
+            if (x == "0")
+            {
+                $("#txt").val("4");
+            } else
+            {
+                $("#txt").val(x + "4")
+            }
+        });
+        $("#b5").click(function()
+         {
+            var x = document.getElementById("txt").value;
+            if (x == "0")
+            {
+                $("#txt").val("5");
+            } else
+            {
+                $("#txt").val(x + "5")
+            }
+        });
+        $("#b6").click(function()
+         {
+            var x = document.getElementById("txt").value;
+            if (x == "0")
+            {
+                $("#txt").val("6");
+            } else
+            {
+                $("#txt").val(x + "6")
+            }
+        });
+        $("#b7").click(function()
+          {
+            var x = document.getElementById("txt").value;
+            if (x == "0")
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+           {
+                $("#txt").val("7");
+            } else
+            {
+                $("#txt").val(x + "7")
+            }
+        });
+        $("#b8").click(function()
+          {
+            var x = document.getElementById("txt").value;
+            if (x == "0")
+            {
+                $("#txt").val("8");
+            } else
+            {
+                $("#txt").val(x + "8")
+            }
+        });
+        $("#b9").click(function()
+         {
+            var x = document.getElementById("txt").value;
+            if (x == "0")
+            {
+                $("#txt").val("9");
+            } else
+            {
+                $("#txt").val(x + "9")
+            }
+        });
+        $("#div").click(function()
+          {
+            var x = document.getElementById("txt").value;
+            var y = x.slice(-1)
+            if (y == "/" || y == "+" || y == "*" || y == "-") {} else {
+                $("#txt").val(x + "/")
+            }
+        });
+        $("#multy").click(function()
+          {
+            var x = document.getElementById("txt").value;
+            var x = document.getElementById("txt").value;
+            var y = x.slice(-1)
+            if (y == "/" || y == "+" || y == "*" || y == "-") {} else {
+                $("#txt").val(x + "*")
+            }
+        });
+        $("#sub").click(function()
+          {
+            var x = document.getElementById("txt").value;
+            var x = document.getElementById("txt").value;
+            var x = document.getElementById("txt").value;
+            var y = x.slice(-1)
+            if (y == "/" || y == "+" || y == "*" || y == "-") {} else {
+                $("#txt").val(x + "-")
+            }
+        });
+        $("#add").click(function()
+         {
+            var x = document.getElementById("txt").value;
+            var x = document.getElementById("txt").value;
+            var x = document.getElementById("txt").value;
+            var x = document.getElementById("txt").value;
+            var y = x.slice(-1)
+            if (y == "/" || y == "+" || y == "*" || y == "-") {} else {
+                $("#txt").val(x + "+")
+            }
+        });
+        $("#dot").click(function()
+          {
+            var x = document.getElementById("txt").value;
+            var y = x.slice(-1)
+            if (y == ".") {} else
+            {
+                $("#txt").val(x + ".")
+            }
+        });
+        $("#ce").click(function()
+        {
+            var x = document.getElementById("txt").value;
+            $("#txt").val(x.substring(0, x.length - 1))
+        });
+    });
+</script>
+<style>
+    body {
+        background-image: url("Image/images.jpg");
+    }
+
+    #d1 {
+        border: 1px solid black;
+        height: 340px;
+        width: 340px;
+    }
+    hr{
+        display:none;
+    }
+</style>
+<br /><br /><br /><br /><br /><br /><br />
+<center>
+    <div id="d1">
+        @using (@Html.BeginForm("Index", "Home"))
+        {
+            <table style="height:25%;border:thick">
+                <tr>
+                    <td colspan="4">
+                        <center>
+                            <h2>Super Calculator</h2>
+                        </center>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">@Html.TextBox("txt", (string)ViewBag.result, null, new { @class = "form-control" })</td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="btn btn-primary" id="b7" value="7" style="height:40px;width:75px" /></td>
+                    <td><input type="button" class="btn btn-primary"  id="b8" value="8" style="height:40px;width:75px" /></td>
+                    <td><input type="button" class="btn btn-primary"  id="b9" value="9" style="height:40px;width:75px" /></td>
+                    <td><input type="button" class="btn btn-success"  id="div" value="/" style="height:40px;width:75px" /></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="btn btn-primary"  id="b4" value="4" style="height:40px;width:75px" /></td>
+                    <td><input type="button" class="btn btn-primary"  id="b5" value="5" style="height:40px;width:75px" /></td>
+                    <td><input type="button" class="btn btn-primary"  id="b6" value="6" style="height:40px;width:75px" /></td>
+                    <td><input type="button" class="btn btn-success"  id="multy" value="*" style="height:40px;width:75px" /></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="btn btn-primary"  id="b1" value="1" style="height:40px;width:75px" /></td>
+                    <td><input type="button" class="btn btn-primary"  id="b2" value="2" style="height:40px;width:75px" /></td>
+                    <td><input type="button" class="btn btn-primary"  id="b3" value="3" style="height:40px;width:75px" /></td>
+                    <td><input type="button" class="btn btn-success"  id="sub" value="-" style="height:40px;width:75px" /></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="btn btn-primary"  id="b0" value="0" style="height:40px;width:75px" /></td>
+                    <td><input type="button" class="btn"  id="dot" value="." style="height:40px;width:75px" /></td>
+                    <td><input type="submit" class="btn btn-info" id="eq" value="=" style="height:40px;width:75px" /></td>
+                    <td><input type="button" class="btn btn-success"  id="add" value="+" style="height:40px;width:75px" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button"  class="btn btn-danger"  id="ce" value="CE" style="height:40px;width:155px" />
+                    </td>
+                    <td colspan="2">
+                        <input type="reset"  class="btn btn-warning"  id="re" value="Clear" style="height:40px;width:155px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <center>
+                            <h2 style="height:40px;width:300px; background-color:darkgrey">Result : @ViewBag.result</h2>
+                        </center>
+                    </td>
+                </tr>
+            </table>
+        }
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+</center>
+@if (@ViewBag.flag == 0)
+{
+    Response.Write("<script> alert('Right value is missing.') </script>");
+}   
